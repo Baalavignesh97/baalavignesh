@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Number Guessing Game</title>
+  
+    <style>
+        html {
+    font-family: sans-serif;
+    }
+      
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* background-color: aquamarine; */
+        background-image: url("https://picsum.photos/seed/picsum/1400/1000");
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: auto;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Guess The Number</h1>
+        See if you can guess it.</p>
+        <div class="form">
+            <label for="guessField">Enter a guess: </label>
+            <input type = "text" id = "guessField" class = "guessField">   
+            <input type = "submit" value = "Submit guess" 
+                class = "guessSubmit" id = "submitguess"> 
+                <p id="result"> </p>
+        </div>
+        </div>
+    </div>
+
+    <script type = "text/javascript">
+    var y = Math.floor(Math.random() * 100 + 1);
+    var guess = 1;
+         console.log(guess === 10, 'result')
+        var result = document.getElementById("result")
+    document.getElementById("submitguess").onclick = function(){
+   var x = document.getElementById("guessField").value;
+   if(x == y){    
+        console.log(guess)
+       result.textContent="CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "+ guess + " GUESS "
+   }
+   else if(x > y) {  
+       console.log(guess)
+       guess++;
+           console.log(guess, 'guess after counting 1')
+      result.textContent = "OOPS SORRY!! TRY A SMALLER NUMBER"
+   }
+   else if(x < y){
+        console.log(guess)
+       guess++;
+       console.log(guess, 'guess after counting 1')
+      result.textContent = "OOPS SORRY!! TRY A GREATER NUMBER"
+   }  if(guess == 10) {
+       result.textContent = `Your try is over, please restart the game. Number is ${y}`
+   }
+}
+</script>
+</body>
+</html> 
